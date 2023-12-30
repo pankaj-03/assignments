@@ -16,6 +16,95 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+// class Calculator {
+//    constructor(){
+//     this.result = 0;
+//   }
+
+//  add(value){
+//    this.result += value;
+  
+//   }
+//  subtract(value){
+//   this.result -= value;
+  
+//  } 
+//  multiply(value){
+//   this.result *= value;
+//  }
+//  divide(value){
+//   if(value === 0){
+//     throw new ERROR("not divisible ");
+//   }
+//   else{
+//     this.result /= value;
+//   }
+//  }
+
+//  clear(){
+//   this.result = 0;
+//  }
+
+//  getResult(){
+//   this.result;
+//  }
+
+//  calculate(str) {
+//   let finalStr = str.replace(/[^0-9+\-/*%().=\s]/g, "");
+
+//   if (/\/\s*0/.test(finalStr)) {
+//     throw new Error("Divison by Zero");
+//   }
+
+//   this.result = eval(finalStr);
+// }
+// }
+
+class Calculator {
+  constructor() {
+    this.result = 0;
+  }
+
+  add(num) {
+    this.result += num;
+  }
+
+  subtract(num) {
+    this.result -= num;
+  }
+
+  multiply(num) {
+    this.result *= num;
+  }
+
+  divide(num) {
+    if (num === 0) {
+      throw new Error("Divison by Zero");
+    } else {
+      this.result /= num;
+    }
+  }
+
+  clear() {
+    this.result = 0;
+  }
+
+  getResult() {
+    return this.result;
+  }
+
+  calculate(str) {
+    let finalStr = str.replace(/[^0-9+\-/*%().=\s]/g, "");
+   
+    if (/\/\s*0/.test(finalStr)) {
+      throw new Error("Divison by Zero");
+    }
+
+    this.result = eval(finalStr);
+  }
+}
+
+module.exports = Calculator;
+
 
 module.exports = Calculator;
