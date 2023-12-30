@@ -14,7 +14,25 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+   const CategoryWise = {};
+
+   for(let x of transactions){
+    const {category , price} = x;
+    if(category in CategoryWise){
+      CategoryWise[category] += price;
+    }
+    else{
+      CategoryWise[category] = price;
+    }
+   }
+
+   const result = [];
+
+   for(let category in CategoryWise){
+    result.push({"category" : category , "totalSpent" : CategoryWise[category]});
+   }
+  
+   return result;
 }
 
 module.exports = calculateTotalSpentByCategory;
