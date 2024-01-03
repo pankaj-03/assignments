@@ -30,10 +30,15 @@ function modified(content){
     const lines = content.split('\n');
 
     // Remove extra spaces from each line
-    const modifiedLines = lines.map(line => line.replace(/\s+/g,' '));
+    // const modifiedLines = lines.map(line => line.replace(/\s+/g,' '));
+    let modifiedLines = "";
+    lines.forEach(function(value){
+        let p = value.replace(/\s+/g,' ');
+        modifiedLines += p;
+    })
 
     // Join lines back together
-    const modifiedContent = modifiedLines.join('\n');
+    // const modifiedContent = modifiedLines.join('\n');
 
-    return modifiedContent;
+    return modifiedLines;
 }
